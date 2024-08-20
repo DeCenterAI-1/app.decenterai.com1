@@ -28,9 +28,9 @@ const EditProfile = ({ onclick }) => {
   // }
 
   return (
-    <div className="absolute inset-0 z-50 bg-primary_11 w-[80%] sm:w-[60%] md:w-[40%] lg:w-[30%] h-[90%]   max-h-screen mx-auto transition-all duration-500 ease-in-out rounded-xl px-6 py-6 flex flex-col gap-4 shadow-xl my-auto">
+    <div className="absolute inset-0 z-50 bg-primary_11 w-[80%] h-auto sm:w-[60%] md:w-[40%] lg:w-[30%] overflow-auto mx-auto rounded-xl px-6 py-6 flex flex-col gap-4 shadow-xl my-auto px-0 py-0">
       <Image src={editProfile} alt="edit profile" />
-      <div className="relative w-[25%] mx-auto">
+      {/* <div className="relative w-[25%] mx-auto">
         <Image
           src={userStore.user?.profileImage}
           alt="profile pic"
@@ -44,11 +44,52 @@ const EditProfile = ({ onclick }) => {
         <button className="absolute -bottom-2 left-10 text-[#8F8F8F] bg-[#2B2B2B] p-1.5 rounded-full">
           <AiOutlineCamera size={20} />
         </button>
+      </div> */}
+      <div className="flex flex-col gap-8">
+        <div className="flex justify-center">
+          <div className="w-[120px] h-[120px] border border-primary_11 rounded-full flex justify-center items-center relative">
+            <img src="/avatars/image.png" className="w-[100%] h-[100%]" />
+            <button className="absolute bottom-0 right-2 text-primary_7 bg-primary_10 p-1.5 rounded-full">
+              <input
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                id="imageInput"
+                // ref={fileInputRef}
+                // onChange={handleFileInputChange}
+              />
+              <AiOutlineCamera size={20} />
+            </button>
+          </div>
+        </div>
       </div>
-      <form action="" className="text-[#5D5D5D] text-sm flex flex-col gap-4 relative">
+      <div className="flex gap-4">
+        <div className="flex-grow">
+          <label htmlFor="name" className="font-bold text-sm text-primary_2">
+            First Name
+          </label>
+          <input
+            type="text"
+            // value={firstName}
+            // onChange={handleFirstNameChange}
+            className="text-primary_7 border border-primary_8 rounded-xl px-4 focus:outline-none bg-transparent h-[56px] w-[100%]"
+          />
+        </div>
+        <div className="flex-grow">
+          <label htmlFor="name" className="font-bold text-sm text-primary_2">
+            Last Name
+          </label>
+          <input
+            type="text"
+            // value={lastName}
+            // onChange={handleLastNameChange}
+            className="text-primary_7 border border-primary_8 rounded-xl px-4 focus:outline-none bg-transparent h-[56px] w-[100%]"
+          />
+        </div>
+      </div>
+      {/* <form action="" className="text-[#5D5D5D] text-sm flex flex-col gap-4 relative">
         <div className="grid gap-3 w-full">
           <div className="flex flex-col gap-1">
-            {/*FIXME: keep firstName and last name ; .*/}
             <label htmlFor="name" className="font-bold text-sm">
               Name
             </label>
@@ -94,8 +135,7 @@ const EditProfile = ({ onclick }) => {
             value={userStore.user?.bio}
             className="text-[#8F8F8F] border border-primary_8 rounded-xl p-3 focus:outline-none bg-transparent h-12 overflow-y-hidden"
             placeholder="About you (optional)"
-            onChange={handleBioChange}
-          ></textarea>
+            onChange={handleBioChange}></textarea>
         </div>
         <div className="font-semibold flex justify-end gap-4 items-center mt-2">
           <button className=" bg-transparent border border-primary_8 rounded-full px-4 py-3 text-[#F5F5F5] w-[140px] text-center">
@@ -105,7 +145,51 @@ const EditProfile = ({ onclick }) => {
             Save changes
           </button>
         </div>
-      </form>
+      </form> */}
+      <div className="flex flex-col gap-1">
+        <label htmlFor="Username" className="font-medium text-primary_2 text-sm">
+          Username
+        </label>
+        <input
+          type="text"
+          // value={username}
+          // onChange={handleUsernameChange}
+          className="text-primary_7 border border-primary_8 rounded-xl px-4 focus:outline-none bg-transparent h-[56px] w-[100%]"
+          id="Username"
+        />
+      </div>
+      <div className="flex flex-col gap-1">
+        <label htmlFor="email" className="font-bold text-sm text-primary_2">
+          Email address
+        </label>
+        <input
+          type="text"
+          // value={email}
+          className="text-primary_7 border border-primary_8 rounded-xl px-4 focus:outline-none bg-transparent h-[56px] w-[100%]"
+          id="email"
+          name="email"
+          // onChange={handleEmailChange}
+        />
+      </div>
+      <div className="flex flex-col gap-1 ">
+        <label htmlFor="bio" className="font-medium text-primary_2 text-sm ">
+          Bio
+        </label>
+        <textarea
+          name="bio"
+          id="bio"
+          // value={bio}
+          className="text-primary_7 border border-primary_8 rounded-xl p-4 focus:outline-none bg-transparent h-12 overflow-y-hidden h-[56px] w-[100%]"
+          onChange={handleBioChange}></textarea>
+      </div>
+      <div className="font-semibold flex justify-end gap-4 items-center mt-2">
+        <button className=" bg-transparent border border-primary_8 rounded-full px-3 py-2 text-[#F5F5F5] w-[160px] text-center text-sm">
+          Cancel
+        </button>
+        <button className=" bg-primary_10 rounded-full px-3 py-2 w-[160px] text-center text-sm">
+          Save changes
+        </button>
+      </div>
     </div>
   )
 }

@@ -4,7 +4,50 @@ import { usePathname } from 'next/navigation'
 import { DashLayout } from '../../dashLayout'
 import { BiArrowBack, BiLike } from 'react-icons/bi'
 import RightSide from './components/right_side'
+import VersionHistory from './components/version_history'
+import Uploaded_Files from './components/uploaded_files'
 
+interface History {
+  name: string
+  date: Date
+  user: string
+}
+const histories: History[] = [
+  {
+    name: 'SpeechT5(TTS task)',
+    date: new Date(),
+    user: 'moses',
+  },
+  {
+    name: 'SpeechT5(TTS task)',
+    date: new Date(),
+    user: 'moses',
+  },
+  {
+    name: 'SpeechT5(TTS task)',
+    date: new Date(),
+    user: 'moses',
+  },
+]
+interface File {
+  name: string,
+  date: Date
+}
+
+const files: File[] = [
+  {
+    name: 'hello_pro.zip',
+    date: new Date(),
+  },
+  {
+    name: 'nice_meet.zip',
+    date: new Date(),
+  },
+  {
+    name: 'very_today.zip',
+    date: new Date(),
+  },
+]
 export default function Page() {
   const pathname = usePathname()
   return (
@@ -19,20 +62,21 @@ export default function Page() {
             <div className="border flex items-center border-[#494949] px-4 py-4 mt-4 rounded-xl ">
               <div className="flex gap-2 items-center grow">
                 <span className="font-logirentRegular text-xl">SpeechT5 (TTS task)</span>
-                <span className="px-2 py-1 border border-[#494949] rounded-full text-xs ">
+                {/* <span className="px-2 py-1 border border-[#494949] rounded-full text-xs ">
                   Feature Extraction
-                </span>
+                </span> */}
               </div>
               <div className=" flex items-center gap-3">
                 <span className="text-xs text-[#5D5D5D]">Updated Sep, 12 2023</span>
-                <div className="flex items-center">
+                {/* <div className="flex items-center">
                   <BiLike className=" text-[#5D5D5D]" />
                   <span className="text-xs text-[#5D5D5D]">127</span>
-                </div>
+                </div> */}
               </div>
             </div>
-            <div className="max-h-screen h-[80%] w-full border overflow-y-scroll rounded-xl mt-5 border-[#494949] px-4 py-4 ">
+            <div className="text-primary_7 max-h-screen h-[80%] w-full border overflow-y-scroll rounded-xl mt-5 border-[#494949] px-4 py-4 ">
               <div className="mb-4">
+                <p className="text-lg text-primary_1 mb-4">Model Description</p>
                 SpeechT5 model fine-tuned for speech synthesis (text-to-speech) on
                 LibriTTS. This model was introduced in SpeechT5: Unified-Modal
                 Encoder-Decoder Pre-Training for Spoken Language Processing by Junyi Ao,
@@ -106,6 +150,17 @@ export default function Page() {
                 including automatic speech recognition, speech synthesis, speech
                 translation, voice conversion, speech enhancement, and speaker
                 identification.
+              </div>
+              <div>
+                <p className="text-lg text-primary_1 mt-8 mb-4">Version history</p>
+                <VersionHistory histories={histories} />
+              </div>
+              <div>
+                <p className="text-lg text-primary_1 mt-8 mb-4">Uploaded files</p>
+                <Uploaded_Files files={files} />
+              </div>
+              <div className="pt-8 flex justify-end">
+                <button className="bg-primary_10 px-4 py-2 rounded-full">Save changes</button>
               </div>
             </div>
           </div>

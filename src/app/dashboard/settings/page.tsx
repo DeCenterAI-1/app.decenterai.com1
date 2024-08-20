@@ -31,7 +31,7 @@ export default function Modal() {
     <>
       <DashLayout>
         <div className="h-full w-full px-4 flex gap-5 pt-10 text-white">
-          <div className="w-[80%]">
+          <div className="w-[100%] md:w-[80%]">
             <Link
               href="/dashboard/settings/profile"
               className="rounded-2xl border mb-4 w-full gap-2 items-cente border-primary_9 flex px-4 py-5"
@@ -51,12 +51,12 @@ export default function Modal() {
               </div>
               <span>Security </span>
             </button>
-            <button className="rounded-2xl w-full border mb-4 gap-2 items-cente border-primary_9 flex px-4 py-5">
+            {/* <button className="rounded-2xl w-full border mb-4 gap-2 items-cente border-primary_9 flex px-4 py-5">
               <div className="text-primary_8">
                 <BiWallet size={24} />
               </div>
               <span>Wallet connect</span>
-            </button>
+            </button> */}
             <button
               className="rounded-2xl w-full border mb-4 gap-2 items-center border-primary_9 flex px-4 py-5"
               onClick={openNotificationModal}
@@ -68,7 +68,7 @@ export default function Modal() {
               <span>Notification</span>
             </button>
           </div>
-          <div className="w-[20%]">
+          <div className="w-[20%] md:display-block hidden">
             <button className="flex bg-primary_9 items-center gap-3 text-white  w-full justify-center py-2 rounded-xl">
               <div className="">
                 <BiLogOut size={18} />

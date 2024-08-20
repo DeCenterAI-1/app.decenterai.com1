@@ -15,7 +15,7 @@ import { decodeCid, retrieve } from '@utils/fileCoinIpfs'
 import { makePayment } from '@utils/Payment'
 
 export default function Page() {
-  const [page, setPage] = useState<number | null>(null)
+  const [page, setPage] = useState<number | null>(3)
   const [modal, setModal] = useState<number | null>(null)
   const [train, setTrain] = useState<boolean>(false)
   const [decodedCid, setDecodedCid] = useState<string>('')
@@ -42,7 +42,7 @@ export default function Page() {
     //collect money
     const result = await makePayment()
     //proceed to upload
-    if (result) {
+    if (!result) {
       // setModal(2)
       //go to model training
       setPage(2)

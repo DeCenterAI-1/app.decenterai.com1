@@ -4,7 +4,7 @@ import { FadeLoader } from 'react-spinners'
 const TransactionProcessing = () => {
   return (
     <div className="fixed inset-0 bg-primary_13 bg-opacity-80 flex items-center justify-center">
-      <div className="w-[25%] h-[50%] bg-primary_12 rounded-xl p-4">
+      <div className="w-[300px] sm-[400px] h-[50%] bg-primary_12 rounded-xl p-4">
         <div className="h-[50%] text-primary_7 flex items-center justify-center">
           {/* <FiLoader size={150} /> */}
           <FadeLoader color="#8f8f8f" />
