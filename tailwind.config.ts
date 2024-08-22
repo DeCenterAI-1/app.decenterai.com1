@@ -32,6 +32,7 @@ const config: Config = {
         primary_11: '#232323',
         primary_12: '#191919',
         primary_13: '#050505',
+        primary_14: 'rgba(5,5,5,0.8)'
       },
     },
   },

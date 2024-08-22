@@ -7,8 +7,8 @@ interface IProps {
 
 const TrainBase = ({ setPage }: IProps) => {
   return (
-    <div className="w-full h-full flex items-center justify-center px-10 gap-10">
-      <div className="w-[30%] h-[60%] border border-primary_8 rounded-xl p-10 flex flex-col items-center justify-center gap-10 text-primary_8">
+    <div className="w-full h-full px-4 flex items-center justify-center gap-10">
+      <div className="max-w-[350px]  border border-primary_8 rounded-xl px-10 py-20 flex flex-col items-center justify-center gap-10 text-primary_8">
         <AiOutlinePlus size={50} />
         <h3 className="font-logirentRegular text-md text-primary_1">New-model</h3>
         <p className="font-archivo text-primary_8 text-lg text-center">
