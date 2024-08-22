@@ -199,7 +199,7 @@ const NewModel = ({ setPage, setModal, setTrain, train, modal, getData }: IProps
           Back
         </div>
         <div className="flex gap-3 text-xs h-full items-center">
-          Models <span>/</span> <span className="text-primary_1">Create model</span>
+          Models <span>/</span> <span className="text-primary_1">New model</span>
         </div>
       </div>
 
@@ -210,6 +210,11 @@ const NewModel = ({ setPage, setModal, setTrain, train, modal, getData }: IProps
       <div className="w-full h-[82%] flex justify-center pt-10 pb-5">
         <div className="w-full lg:w-[60%] xl:w-[40%]  h-full ">
           <div className="w-full h-[70%] overflow-y-auto flex flex-col  gap-2 pr-1">
+            <div className="h-2 font-archivo flex items-center text-primary_1 text-xs">
+              <p>
+                Model Name
+              </p>
+            </div>
             <div className="border border-primary_8 rounded-xl h-12">
               <input
                 type="text"
@@ -223,7 +228,7 @@ const NewModel = ({ setPage, setModal, setTrain, train, modal, getData }: IProps
               <div className="h-2 font-archivo flex items-center text-primary_1 text-xs py-4 ">
                 <p>
                   {' '}
-                  Upload working directory <span className="px-2"> ( .zip )</span>
+                  Upload Docker Function
                 </p>
               </div>
               {/* @ts-ignore */}
@@ -264,9 +269,9 @@ const NewModel = ({ setPage, setModal, setTrain, train, modal, getData }: IProps
             </div>
 
             <div className="h-auto ">
-              <div className="grid grid-cols-1   gap-2 h-auto">
+              <div className="grid grid-cols-1 gap-2 h-auto">
                 {dataSet && (
-                  <div className="h-6  font-archivo bg-primary_11 flex items-center justify-between text-primary_1 text-xs py-2 px-2 rounded-sm">
+                  <div className="h-6 w-[100%] sm:w-[50%] font-archivo bg-primary_11 flex items-center justify-between text-primary_1 text-xs py-2 px-2 rounded-sm">
                     <p className="text-primary_1 text-sm ">
                       {truncateFileName(dataSet.name)}{' '}
                       <span className="text-primary_9 text-xs">
@@ -366,7 +371,7 @@ const NewModel = ({ setPage, setModal, setTrain, train, modal, getData }: IProps
               onClick={() => startProcess()}
               className="bg-primary_11 text-primary_1 font-semibold font-primaryArchivo text-sm py-3 w-full cursor-pointer rounded-xl"
             >
-              Train
+              Run
             </button>
           </div>
         </div>

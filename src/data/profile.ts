@@ -17,16 +17,16 @@ interface Model {
 }
 
 const profileInfo: Info[] = [
-  {
-    id: 1,
-    text: 'Earnings',
-    count: '$12,000',
-  },
-  {
-    id: 2,
-    text: 'Teams',
-    count: '2',
-  },
+  // {
+  //   id: 1,
+  //   text: 'Earnings',
+  //   count: '$12,000',
+  // },
+  // {
+  //   id: 2,
+  //   text: 'Teams',
+  //   count: '2',
+  // },
   {
     id: 3,
     text: 'Models',

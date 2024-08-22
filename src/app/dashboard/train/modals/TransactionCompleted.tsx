@@ -7,8 +7,8 @@ interface IProps {
 
 const TransactionCompleted = ({ setModal }: IProps) => {
   return (
-    <div className="fixed inset-0 bg-primary_13 bg-opacity-80 flex items-center justify-center">
-      <div className="w-[25%] h-[50%] bg-primary_12 rounded-xl p-4">
+    <div className="fixed inset-0 bg-primary_1 bg-opacity-80 flex items-center justify-center">
+      <div className="w-[300px] sm-[400px] h-[50%] bg-primary_12 rounded-xl p-4">
         <div className="h-[30%] text-primary_1 flex items-center justify-center">
           <FaRegCircleCheck size={80} />
         </div>

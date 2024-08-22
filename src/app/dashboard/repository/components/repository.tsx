@@ -4,48 +4,92 @@ import { BiLike } from 'react-icons/bi'
 import { GoDownload } from 'react-icons/go'
 
 export default function Repository() {
-  const { models } = useModelStore()
+  // const { models } = useModelStore()
+  const models = [
+    {
+      id: 0,
+      name: 'hello',
+      description: 'hell world'
+    },
+    {
+      id: 0,
+      name: 'hello',
+      description: 'hell world'
+    }
+    ,
+    {
+      id: 0,
+      name: 'hello',
+      description: 'hell world'
+    }
+  ];
 
   return (
-    <div>
-
+    <div className="grid sm:grid-cols-2 sm:gap-8">
       {/* extract the values of the object */}
-      {models && Object.values(models).map(model => (
-        <div
-          key={model.id}
-          className=" border border-primary_9 flex px-5 mb-5 py-3 items-center rounded-xl  h-[170px] min-h-[170px]"
-        >
-          <div className="w-[80%] h-full">
-            <div className=" flex h-[25%] items-start ">
-              <span className="bg-primary_11 rounded-full text-primary_8 py-1 px-3">
-                {'Text Generation'}
-              </span>
-            </div>
-            <div className="h-[20%]">
-              <span className="text-lg ">{model.name}</span>
-            </div>
-            <div className="flex items-center h-[40%]">
-              <p className="text-xs">{model.description} </p>
-            </div>
-            <div className=" h-[15%] text-xs text-primary_8 flex gap-4">
-              <div>
-                <span>Updated {"12 2023"}</span>
+      {models ? (
+        Object.values(models).map((model) => (
+          <div
+            key={model.id}
+            className=" border border-primary_9 flex px-5 mb-5 py-3 items-center rounded-xl  h-[170px] min-h-[170px]">
+            <div className="w-[80%] h-full">
+              <div className=" flex h-[25%] items-start ">
+                <span className="bg-primary_11 rounded-full text-primary_8 py-1 px-3">
+                  {'Text Generation'}
+                </span>
               </div>
-              <div className="flex">
-                <GoDownload />
-                <span>{'12k'}</span>
+              <div className="h-[20%]">
+                <span className="text-lg ">{model.name}</span>
               </div>
-              <div className="flex">
-                <BiLike />
-                <span>{'50'}</span>
+              <div className="flex items-center h-[40%]">
+                <p className="text-xs">{model.description} </p>
+              </div>
+              <div className=" h-[15%] text-xs text-primary_8 flex gap-4">
+                <div>
+                  <span>Updated {'12 2023'}</span>
+                </div>
+                <div className="flex">
+                  <GoDownload />
+                  <span>{'12k'}</span>
+                </div>
+                <div className="flex">
+                  <BiLike />
+                  <span>{'50'}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-[20%] bg-primary_11" style={{aspectRatio: '1 / 1'}}></div>
+          </div>
+        ))
+      ) : (
+        <div className="w-full flex justify-center">
+          <div className="border flex a rounded-2xl border-primary_11 w-[300px] h-[340px] p-4 flex items-center justify-center text-base">
+            <div className="flex flex-col gap-12 justify-center items-center">
+              <div className="flex justify-center">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M45.9375 22.3125H42.4845C42.2947 20.2031 41.7424 18.1422 40.8518 16.2206L43.8429 14.493C44.2306 14.2693 44.5135 13.9006 44.6294 13.4683C44.7453 13.0359 44.6847 12.5752 44.4609 12.1875C44.2372 11.7998 43.8685 11.5169 43.4362 11.401C43.0038 11.2851 42.5431 11.3457 42.1554 11.5695L39.1601 13.2991C37.9364 11.5713 36.4286 10.0636 34.7009 8.83992L36.4305 5.84461C36.6543 5.45692 36.7149 4.99621 36.599 4.56383C36.4831 4.13146 36.2002 3.76284 35.8125 3.53906C35.4248 3.31529 34.9641 3.25469 34.5317 3.37059C34.0994 3.4865 33.7307 3.76942 33.507 4.15711L31.7794 7.1482C29.8578 6.25759 27.7969 5.70527 25.6875 5.51555V2.0625C25.6875 1.61495 25.5097 1.18572 25.1932 0.869257C24.8768 0.55279 24.4476 0.375 24 0.375C23.5524 0.375 23.1232 0.55279 22.8068 0.869257C22.4903 1.18572 22.3125 1.61495 22.3125 2.0625V5.51555C20.2031 5.70527 18.1422 6.25759 16.2206 7.1482L14.493 4.15711C14.3822 3.96514 14.2347 3.79688 14.0589 3.66193C13.8831 3.52698 13.6824 3.42798 13.4683 3.37059C13.2542 3.3132 13.0309 3.29854 12.8111 3.32745C12.5914 3.35635 12.3795 3.42826 12.1875 3.53906C11.7998 3.76284 11.5169 4.13146 11.401 4.56383C11.2851 4.99621 11.3457 5.45692 11.5695 5.84461L13.2991 8.83992C11.5713 10.0636 10.0636 11.5713 8.83992 13.2991L5.84461 11.5695C5.45692 11.3457 4.99621 11.2851 4.56383 11.401C4.13146 11.5169 3.76284 11.7998 3.53906 12.1875C3.31529 12.5752 3.25469 13.0359 3.37059 13.4683C3.4865 13.9006 3.76942 14.2693 4.15711 14.493L7.1482 16.2206C6.25759 18.1422 5.70527 20.2031 5.51555 22.3125H2.0625C1.61495 22.3125 1.18572 22.4903 0.869257 22.8068C0.55279 23.1232 0.375 23.5524 0.375 24C0.375 24.4476 0.55279 24.8768 0.869257 25.1932C1.18572 25.5097 1.61495 25.6875 2.0625 25.6875H5.51555C5.70527 27.7969 6.25759 29.8578 7.1482 31.7794L4.15711 33.507C3.83521 33.6926 3.5836 33.9793 3.44131 34.3226C3.29902 34.6659 3.27402 35.0465 3.37019 35.4055C3.46636 35.7644 3.67831 36.0816 3.97316 36.3077C4.26801 36.5339 4.62926 36.6564 5.00086 36.6562C5.29715 36.6572 5.58835 36.5793 5.84461 36.4305L8.83992 34.7009C10.0636 36.4286 11.5713 37.9364 13.2991 39.1601L11.5695 42.1554C11.3457 42.5431 11.2851 43.0038 11.401 43.4362C11.5169 43.8685 11.7998 44.2372 12.1875 44.4609C12.5752 44.6847 13.0359 44.7453 13.4683 44.6294C13.9006 44.5135 14.2693 44.2306 14.493 43.8429L16.2206 40.8518C18.1422 41.7424 20.2031 42.2947 22.3125 42.4845V45.9375C22.3125 46.3851 22.4903 46.8143 22.8068 47.1307C23.1232 47.4472 23.5524 47.625 24 47.625C24.4476 47.625 24.8768 47.4472 25.1932 47.1307C25.5097 46.8143 25.6875 46.3851 25.6875 45.9375V42.4845C27.7969 42.2947 29.8578 41.7424 31.7794 40.8518L33.507 43.8429C33.7307 44.2306 34.0994 44.5135 34.5317 44.6294C34.9641 44.7453 35.4248 44.6847 35.8125 44.4609C36.2002 44.2372 36.4831 43.8685 36.599 43.4362C36.7149 43.0038 36.6543 42.5431 36.4305 42.1554L34.7009 39.1601C36.4286 37.9364 37.9364 36.4286 39.1601 34.7009L42.1554 36.4305C42.3473 36.5414 42.5593 36.6133 42.779 36.6423C42.9988 36.6712 43.2221 36.6565 43.4362 36.5991C43.6503 36.5418 43.851 36.4427 44.0268 36.3078C44.2027 36.1728 44.3502 36.0045 44.4609 35.8125C44.685 35.4251 44.746 34.9645 44.6304 34.5322C44.5149 34.0998 44.2324 33.731 43.845 33.507L40.8539 31.7794C41.7438 29.8577 42.2954 27.7968 42.4845 25.6875H45.9375C46.3851 25.6875 46.8143 25.5097 47.1307 25.1932C47.4472 24.8768 47.625 24.4476 47.625 24C47.625 23.5524 47.4472 23.1232 47.1307 22.8068C46.8143 22.4903 46.3851 22.3125 45.9375 22.3125ZM24 8.8125C27.7342 8.81694 31.3362 10.1954 34.1193 12.6852C36.9024 15.1749 38.6719 18.6018 39.0905 22.3125H24.9745L17.9166 10.0887C19.8339 9.24597 21.9056 8.81137 24 8.8125ZM8.8125 24C8.81379 21.621 9.37395 19.2755 10.4478 17.1526C11.5217 15.0298 13.0793 13.1889 14.9951 11.7783L22.0509 24L14.9951 36.2217C13.0793 34.8111 11.5217 32.9702 10.4478 30.8474C9.37395 28.7245 8.81379 26.379 8.8125 24ZM24 39.1875C21.9064 39.192 19.8347 38.761 17.9166 37.9219L24.9745 25.6875H39.0905C38.6719 29.3982 36.9024 32.8251 34.1193 35.3148C31.3362 37.8046 27.7342 39.1831 24 39.1875Z"
+                    fill="#5D5D5D"
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col gap-[1rem] text-center">
+                <p className="font-logirentRegular text-2xl">Models</p>
+                <p>All your trained models will appear here</p>
+              </div>
+              <div className="w-[100%]">
+                <button className="w-[100%] py-[0.8rem] rounded-full bg-primary_11">Train a model</button>
               </div>
             </div>
           </div>
-
-          <div className="w-[20%] h-full bg-primary_11 "></div>
         </div>
-      ))}
-
+      )}
     </div>
   )
 }

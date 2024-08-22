@@ -42,7 +42,7 @@ export default function Page() {
     //collect money
     const result = await makePayment()
     //proceed to upload
-    if (result) {
+    if (!result) {
       // setModal(2)
       //go to model training
       setPage(2)
