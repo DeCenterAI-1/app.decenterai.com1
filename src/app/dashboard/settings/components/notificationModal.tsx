@@ -7,7 +7,7 @@ function NotificationModal({ show, onClose }) {
   return (
     <div className={`modal ${show ? 'block' : 'hidden'}`}>
       <div className="bg-primary_13 opacity-50 backdrop-blur-md fixed inset-0 "></div>
-      <div className="justify-center items-center flex overflow-x-hidden mt-10 text-white overflow-y-auto fixed inset-0 z-60 outline-none focus:outline-none">
+      <div className="justify-center items-center flex overflow-x-hidden mt-10 text-white overflow-y-auto fixed inset-0 z-60 outline-none focus:outline-none px-4">
         <div className="relative my-6 mx-auto w-[520px] z-50">
           {/*content*/}
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-primary_11 outline-none focus:outline-none">
@@ -37,14 +37,14 @@ function NotificationModal({ show, onClose }) {
             {/*footer*/}
             <div className="flex items-center gap-4 justify-end p-6">
               <button
-                className="background-transparent border border-primary_9 rounded-xl font-bold uppercase px-6 py-4 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className="background-transparent border border-primary_9 rounded-full font-bold px-4 py-3 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 onClick={onClose}
               >
                 Cancel
               </button>
               <button
-                className="bg-primary_9 text-white text-sm px-6 py-4 rounded-xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className="bg-primary_9 text-white text-sm px-4 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 onClick={onClose}
               >
